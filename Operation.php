@@ -1,9 +1,9 @@
 <?php
-require_once('Constants.php');
+require_once('Constants.php'); // Подключаем константы
 header('Access-Control-Allow-Origin: *'); // Для чтения ресурсов переделать
 header('Content-Type: application/json'); // Определение JSON
 
-$connect = new mysqli(HOST, NAME, PASS, DB);
+$connect = new mysqli(HOST, NAME, PASS, DB); // Инициализируем подключение
 mysqli_set_charset($connect, 'utf8'); // Задаём кодировку для подключения к БД
 
 function get_users()
@@ -15,7 +15,7 @@ function get_users()
         $array_stud["stud"] = $array_users; // Задаём заголовок для массива
     }
     return $array_stud;
-    $GLOBALS['connect']->close();
+    $GLOBALS['connect']->close(); // Закрытие соединения
 }
 
 function get_logs($id_log)
@@ -27,7 +27,7 @@ function get_logs($id_log)
         $array_logs["logs"] = $array_log; // Задаём заголовок для массива
     }
     return $array_logs;
-    $GLOBALS['connect']->close();
+    $GLOBALS['connect']->close(); // Закрытие соединения
 }
 
 // function get_logs_today($id_log)
