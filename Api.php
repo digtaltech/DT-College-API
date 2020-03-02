@@ -1,6 +1,6 @@
 <?php
 require_once('Operation.php');
-header("Access-Control-Allow-Origin", "*");
+
 switch ($_GET['apicall']) {
 
   case 'getusers':
@@ -13,11 +13,11 @@ switch ($_GET['apicall']) {
       }
   break;
 
-  // case 'getlogtoday':
-  //     if (isset($_GET['id'])) {
-  //        $response = get_logs_today($_GET['id']);
-  //     }
-  // break;
+  case 'getlogtoday':
+      if (isset($_GET['id'])) {
+         $response = get_logs_today($_GET['id']);
+      }
+  break;
 
   default:
     echo "error";
