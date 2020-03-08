@@ -1,4 +1,5 @@
 <?php
+
 require_once('Operation.php');
 
 switch ($_GET['apicall']) {
